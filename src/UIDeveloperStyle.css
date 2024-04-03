@@ -18,8 +18,7 @@ img {
 }
 
 .tag {
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-inline: 5px;
   border: 1px solid;
 }
 .tag-regular {

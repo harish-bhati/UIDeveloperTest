@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px 40px;
+}
+
+.spacer {
+  margin-bottom: 30px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.tag {
+  padding-right: 5px;
+  padding-left: 5px;
+  border: 1px solid;
+}
+.tag-regular {
+  border-radius: 20px;
+}
+.tag-high {
+  background: Tomato;
+}
+.tag-mid {
+  background: Yellow;
+}
+.tag-low {
+  background: LimeGreen;
+}
+
+.menu {
+  /* Update only the CSS styles of .menu-item */
+}
+.menu-body {
+  background-color: DodgerBlue;
+  display: inline-block;
+  border: 2px solid black;
+  color: black;
+}
+.menu-item {
+  background-color: LightGray;
+  display: block;
+  margin-block: 10px;
+  padding-inline: 10px;
+  border-block: 2px solid black;
+}
+
+.para-group p {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+.para-group p:first-child {
+  margin-bottom: 20px;
+}
+.para-group p:first-child::selection {
+  background: #e5e530;
+  color: #c10606;
+}
+.para-group p:last-child::selection {
+  background: #9fdd86;
+  color: #585858;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.image-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active-list-ul {
+  list-style-type: none;
+  padding: 0;
+  margin-block: 20px;
+}
+.active-list-ul li {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.active-list-ul li:hover {
+  background-color: #eee;
+}
+.active-list-ul li:active {
+  background-color: #eee;
+  color: #c10606;
+}
+
+.accordian-details {
+  border: 1px solid #3498db;
+  margin-bottom: 5px;
+}
+.accordian details[open] > summary::marker {
+  content: "- ";
+}
+.accordian-summary {
+  background-color: #3498db; /* Change background color as desired */
+  color: #fff; /* Change text color as desired */
+  padding: 10px;
+  cursor: pointer;
+}
+.accordian-summary::-webkit-details-marker {
+  display: none;
+}
+.accordian-summary::marker {
+  content: "+ ";
+}
+.accordian-title {
+  display: inline-block;
+  margin-left: 10px;
+}
+.accordian-discription {
+  padding: 10px;
+}
+
+.numbered-list {
+  padding-left: 30px;
+}
+
+.alternate-list-ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.alternate-list-ul li {
+  padding: 10px;
+  margin: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+.alternate-list-ul li:nth-child(odd) {
+  /* Light grey */
+  background-color: #b9b9b9;
+}
+.alternate-list-ul li:nth-child(even) {
+  /* Light Blue */
+  background-color: #bee5ff;
+}
+.alternate-list-ul li:nth-child(3n) {
+  /* Light Blue for every third item */
+  background-color: #3498db;
+}
+.alternate-list-ul li:hover {
+  /* Light Green on hover */
+  background-color: #d3ffe5;
+}
+
+.radio-list input[type=radio] {
+  accent-color: #ff0000;
+  width: 20px;
+  height: 20px;
+}
+.radio-list .radio-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.radio-list .radio-item:hover input[type=radio] {
+  accent-color: green;
+}
+.radio-list .radio-item * {
+  cursor: pointer;
+}
+.radio-list .radio-item:not(:first-child) {
+  margin-top: 10px;
+}
+
+.range-group input[type=number] {
+  min-width: 200px;
+  min-height: 30px;
+  padding-inline: 10px;
+}
+.range-group input[type=number]:out-of-range {
+  border: 1px solid #ff0000;
+  color: white;
+  background-color: #ff0000;
+}
+
+.company_epm {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 10px;
+}
+
+.company_card {
+  border: 1px solid #333;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+.company_card img {
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  width: 200px;
+}
+.company_card_caption *:not(:first-child) {
+  margin-top: 10px;
+}
+
+[company-designation=Director i] {
+  order: -1;
+}
+
+[company-name="Kris Nair"] {
+  order: -2;
+}
+
+[company-designation=Advisor] {
+  order: 0;
+}
+
+[company-designation="Board Director"] {
+  order: 1;
+}
+
+.notification-btns {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+.notification-btn {
+  display: block;
+  padding-block: 15px;
+  padding-inline: 30px;
+  background: #ccc;
+  position: relative;
+}
+.notification-btn::before {
+  content: attr(notification-count);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #bfb321;
+  color: #fff;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  background: #ddd;
+}
+.grid-4 div {
+  background: #ccc;
+  padding: 20px;
+}
+.grid-4:has(:empty) {
+  background: #333;
+}
+.grid-4 :empty {
+  display: none;
+}/*# sourceMappingURL=UIDeveloperStyle.css.map */
